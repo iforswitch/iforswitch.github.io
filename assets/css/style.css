@@ -1,7 +1,7 @@
 ---
 ---
 
-@import "{{ site.theme }}";
+/*@import "{{ site.theme }}";*/
 
 .Main-Body{
   background-color: #FFFFF0;
