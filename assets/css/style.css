@@ -4,5 +4,5 @@
 @import "{{ site.theme }}";
 
 .Main-Body{
-  background-color: blue;
+  background-color: #FFFFF0;
 }
