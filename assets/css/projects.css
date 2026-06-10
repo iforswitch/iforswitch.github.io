@@ -177,69 +177,72 @@
   }
 }
 
-/* ── Carousel ── */
-.carousel {
-  position: relative;
-  border-radius: 3px;
-  overflow: hidden;
-  background: var(--parchment);
+/* ── 3D project cards — full width with image grid ── */
+.project-card-3d {
+  padding: 2.5rem 0;
+}
+
+.project-card-3d + .project-card-3d {
+  border-top: 1px solid var(--divider);
+}
+
+.project-card-3d .project-content {
+  margin-bottom: 1.75rem;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.img-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.img-figure img {
+  width: 100%;
   aspect-ratio: 4/3;
-}
-
-.carousel-track {
-  display: flex;
-  height: 100%;
-  transition: transform 0.4s ease;
-}
-
-.carousel-track img,
-.carousel-track video {
-  min-width: 100%;
-  height: 100%;
   object-fit: cover;
-  flex-shrink: 0;
+  border-radius: 3px;
+  background: var(--parchment);
+  display: block;
 }
 
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(44, 31, 20, 0.55);
-  color: #F7F3EE;
-  border: none;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 0.9rem;
-  display: flex;
+.img-caption {
+  font-size: 0.72rem;
+  color: var(--fog);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  padding: 0 0.1rem;
+}
+
+@media (max-width: 680px) {
+  .img-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Lightbox ── */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 31, 20, 0.92);
+  z-index: 999;
   align-items: center;
   justify-content: center;
-  transition: background 0.2s;
-  z-index: 2;
+  cursor: zoom-out;
 }
 
-.carousel-btn:hover { background: var(--ember); }
-.carousel-btn.prev { left: 0.6rem; }
-.carousel-btn.next { right: 0.6rem; }
-
-.carousel-dots {
-  position: absolute;
-  bottom: 0.6rem;
-  left: 50%;
-  transform: translateX(-50%);
+#lightbox.active {
   display: flex;
-  gap: 0.4rem;
-  z-index: 2;
 }
 
-.dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(247, 243, 238, 0.5);
-  cursor: pointer;
-  transition: background 0.2s;
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
 }
-
-.dot.active { background: var(--cream); }
