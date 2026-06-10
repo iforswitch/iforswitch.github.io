@@ -1,346 +1,248 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects · Marc Agbayani</title>
-  <link rel="stylesheet" href="assets/css/styles.css" />
-  <link rel="stylesheet" href="assets/css/projects.css" />
-</head>
-<body>
+/* ── Projects page additions ── */
 
-  <nav>
-    <a class="nav-logo" href="index.html">MA</a>
-    <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="mailto:marcjagbayani@gmail.com">Contact</a></li>
-    </ul>
-  </nav>
+.projects-hero {
+  padding: 5rem 0 3rem;
+}
 
-  <main>
+.projects-hero .section-label { margin-bottom: 0.75rem; }
 
-    <section class="projects-hero">
-      <p class="section-label">Work</p>
-      <h1 class="section-heading">Projects</h1>
-      <p class="projects-intro">
-        A mix of hardware, embedded systems, and software — most built end-to-end
-        from design through to working implementation.
-      </p>
-    </section>
+.projects-intro {
+  font-size: 0.92rem;
+  color: var(--bark-light);
+  max-width: 520px;
+  line-height: 1.85;
+  margin-top: 1rem;
+}
 
-    <!-- ── Hardware & Electrical ── -->
-    <div class="category">
-      <div class="category-header">
-        <h2 class="category-title">Hardware &amp; Electrical</h2>
-        <span class="category-count">3 projects</span>
-      </div>
+/* Category block */
+.category {
+  padding: 4rem 0;
+}
 
-      <!-- Energy Monitor -->
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="assets/img/energy-monitor.jpg" alt="Smart Energy Monitor PCB"> -->
-          Photo coming soon
-        </div>
-        <div class="project-content">
-          <p class="project-tag">PCB Design · Firmware · Electrical</p>
-          <h3 class="project-title">Smart Energy Monitor</h3>
-          <p class="project-desc">
-            Designed and built a smart energy monitoring system end-to-end — from schematic
-            and PCB layout through to firmware running on an ATmega328P.
-          </p>
-          <ul class="project-bullets">
-            <li>Designed custom PCB in Altium Designer; validated analog circuits in LTSpice</li>
-            <li>Implemented UART communication, ADC sampling, timers, and interrupt-driven logic</li>
-            <li>Debugged hardware using an oscilloscope through to working operation</li>
-          </ul>
-          <div class="project-chips">
-            <span class="chip">Altium Designer</span>
-            <span class="chip">ATmega328P</span>
-            <span class="chip">LTSpice</span>
-            <span class="chip">C</span>
-            <span class="chip">UART · ADC</span>
-          </div>
-          <a class="project-link" href="https://github.com/iforswitch" target="_blank">View on GitHub →</a>
-        </div>
-      </div>
+.category + .category {
+  border-top: 1px solid var(--divider);
+}
 
-      <!-- Keyboard -->
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="assets/img/keyboard.jpg" alt="Custom Handwired Keyboard"> -->
-          Photo coming soon
-        </div>
-        <div class="project-content">
-          <p class="project-tag">Embedded Systems · PCB · Firmware</p>
-          <h3 class="project-title">Custom Handwired Keyboard</h3>
-          <p class="project-desc">
-            Engineered a fully custom split keyboard around the RP2040, designing per-key PCBs
-            and writing all firmware from scratch.
-          </p>
-          <ul class="project-bullets">
-            <li>Designed per-key PCBs with integrated RGB lighting and hand-wired the full matrix</li>
-            <li>Integrated trackball module, rotary encoders, and an LCD display</li>
-            <li>Programmed all firmware using QMK, optimised for modularity and ease of assembly</li>
-          </ul>
-          <div class="project-chips">
-            <span class="chip">RP2040</span>
-            <span class="chip">KiCad</span>
-            <span class="chip">QMK</span>
-            <span class="chip">C</span>
-            <span class="chip">PCB Assembly</span>
-          </div>
-          <a class="project-link" href="https://github.com/iforswitch" target="_blank">View on GitHub →</a>
-        </div>
-      </div>
+.category-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
 
-      <!-- Brushless Motor -->
-      <div class="project-card">
-        <div class="project-img">
-          <!-- Replace with: <img src="assets/img/motor.jpg" alt="Brushless Motor"> -->
-          Photo coming soon
-        </div>
-        <div class="project-content">
-          <p class="project-tag">Electrical · Mechanical · Prototyping</p>
-          <h3 class="project-title">Brushless Motor</h3>
-          <p class="project-desc">
-            Constructed a brushless motor from first principles, integrating mechanical
-            design with the full electrical drive system.
-          </p>
-          <ul class="project-bullets">
-            <li>Wound coils by hand and 3D-printed structural motor components</li>
-            <li>Assembled and wired the complete electrical drive system</li>
-            <li>Debugged mechanical and electrical systems through to working operation</li>
-          </ul>
-          <div class="project-chips">
-            <span class="chip">Motor Design</span>
-            <span class="chip">Fusion 360</span>
-            <span class="chip">3D Printing</span>
-            <span class="chip">Electronics Assembly</span>
-          </div>
-          <a class="project-link" href="https://github.com/iforswitch" target="_blank">View on GitHub →</a>
-        </div>
-      </div>
+.category-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3.5vw, 2rem);
+  font-weight: 400;
+  color: var(--bark);
+}
 
-    </div>
+.category-count {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--fog);
+}
 
-    <!-- ── Software ── -->
-    <div class="category">
-      <div class="category-header">
-        <h2 class="category-title">Software</h2>
-        <span class="category-count">2 projects</span>
-      </div>
+/* Project card */
+.project-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: start;
+  padding: 2.5rem 0;
+}
 
-      <!-- KPI Forecasting -->
-      <div class="project-card">
-        <div class="project-content">
-          <p class="project-tag">Python · Data · Machine Learning</p>
-          <h3 class="project-title">Business KPI Forecasting Tool</h3>
-          <p class="project-desc">
-            A Python application that ingests business data and forecasts KPIs across
-            multiple predictive models, enabling side-by-side comparison to identify the best fit.
-          </p>
-          <ul class="project-bullets">
-            <li>Implemented and compared multiple forecasting models including regression and time series approaches</li>
-            <li>Focused on making model outputs interpretable for non-technical users</li>
-          </ul>
-          <div class="project-chips">
-            <span class="chip">Python</span>
-            <span class="chip">Data Analysis</span>
-            <span class="chip">Forecasting</span>
-          </div>
-        </div>
-        <div class="project-img">
-          Photo coming soon
-        </div>
-      </div>
+.project-card + .project-card {
+  border-top: 1px solid var(--divider);
+}
 
-      <!-- Car Viewer -->
-      <div class="project-card">
-        <div class="project-content">
-          <p class="project-tag">Java · Firebase · Mobile</p>
-          <h3 class="project-title">Car Listing Viewer</h3>
-          <p class="project-desc">
-            A Java application backed by Firestore (Firebase), supporting real-time data
-            syncing and display of car listing information.
-          </p>
-          <ul class="project-bullets">
-            <li>Integrated Firestore as a real-time backend database for live data retrieval</li>
-            <li>Structured the app around clean separation between UI and database logic</li>
-          </ul>
-          <div class="project-chips">
-            <span class="chip">Java</span>
-            <span class="chip">Firebase</span>
-            <span class="chip">Firestore</span>
-          </div>
-        </div>
-        <div class="project-img">
-          Photo coming soon
-        </div>
-      </div>
+.project-card.full-width {
+  grid-template-columns: 1fr;
+}
 
-    </div>
+/* Image placeholder */
+.project-img {
+  background: var(--parchment);
+  border-radius: 3px;
+  aspect-ratio: 4/3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fog);
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px dashed var(--divider);
+  overflow: hidden;
+}
 
-    <!-- ── 3D Design & Fabrication ── -->
-    <div class="category">
-      <div class="category-header">
-        <h2 class="category-title">3D Design &amp; Fabrication</h2>
-        <span class="category-count">3 projects</span>
-      </div>
+.project-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 3px;
+}
 
-      <!-- Piston Engine -->
-      <div class="project-card-3d">
-        <div class="project-content">
-          <p class="project-tag">CAD · FDM Printing · Mechanical Design</p>
-          <h3 class="project-title">Single Piston Engine</h3>
-          <p class="project-desc">
-            A fully functional single-piston engine desk toy, designed from the ground up
-            for FDM printing — no supports, no overhangs, no wasted material.
-          </p>
-          <ul class="project-bullets">
-            <li>Split into modular components that print flat on the bed, maximising layer adhesion at stress points</li>
-            <li>Designed with tight tolerances so the mechanism moves freely without play</li>
-            <li>Includes a detailed assembly diagram for piecing the parts together</li>
-          </ul>
-          <div class="project-chips">
-            <span class="chip">Fusion 360</span>
-            <span class="chip">FDM Printing</span>
-            <span class="chip">Modular Design</span>
-            <span class="chip">Tolerance Analysis</span>
-          </div>
-          <a class="project-link" href="https://github.com/iforswitch/3d-projects" target="_blank">View on GitHub →</a>
-        </div>
-        <div class="img-grid">
-          <figure class="img-figure">
-            <img src="https://raw.githubusercontent.com/iforswitch/3d-projects/main/single-piston-engine/Screenshot_20260610_131815_Gallery.jpg" alt="Piston engine assembled">
-            <figcaption class="img-caption">Front turning crank</figcaption>
-          </figure>
-          <figure class="img-figure">
-            <img src="https://raw.githubusercontent.com/iforswitch/3d-projects/main/single-piston-engine/Screenshot_20260610_131831_Gallery.jpg" alt="Piston engine detail">
-            <figcaption class="img-caption">Back shield of turning crank</figcaption>
-          </figure>
-          <figure class="img-figure">
-            <img src="https://raw.githubusercontent.com/iforswitch/3d-projects/main/single-piston-engine/Screenshot_20260610_131845_Gallery.jpg" alt="Piston engine parts">
-            <figcaption class="img-caption">Side open view of the mechanism</figcaption>
-          </figure>
-        </div>
-      </div>
+.project-content {}
 
-      <!-- Phone Gimbal -->
-      <div class="project-card-3d">
-        <div class="project-content">
-          <p class="project-tag">CAD · FDM Printing · Product Design</p>
-          <h3 class="project-title">Gimbal-Style Phone Case — S10+</h3>
-          <p class="project-desc">
-            A two-part gimbal-style phone case designed for the Samsung S10+, with a
-            rotating assembly that allows free movement on one axis.
-          </p>
-          <ul class="project-bullets">
-            <li>Designed around the exact dimensions of the S10+ for a precise fit</li>
-            <li>Two-part assembly slots together cleanly — no supports needed</li>
-          </ul>
-          <div class="project-chips">
-            <span class="chip">Fusion 360</span>
-            <span class="chip">FDM Printing</span>
-            <span class="chip">Product Design</span>
-          </div>
-          <a class="project-link" href="https://github.com/iforswitch/3d-projects" target="_blank">View on GitHub →</a>
-        </div>
-        <div class="img-grid">
-          <figure class="img-figure">
-            <img src="https://raw.githubusercontent.com/iforswitch/3d-projects/main/s10+-phone-gimbal/20251125_073420.jpg" alt="Gimbal front view">
-            <figcaption class="img-caption">Back of the case with grip bands</figcaption>
-          </figure>
-          <figure class="img-figure">
-            <img src="https://raw.githubusercontent.com/iforswitch/3d-projects/main/s10+-phone-gimbal/20251121_002259.jpg" alt="Gimbal rotation">
-            <figcaption class="img-caption">Case detail</figcaption>
-          </figure>
-          <figure class="img-figure">
-            <iframe 
-              src="https://youtube.com/embed/pHpKZv3qA6c"
-              allowfullscreen
-              style="width:100%; aspect-ratio:4/3; border:none; border-radius:3px;">
-            </iframe>
-            <figcaption class="img-caption">Gimbal in action</figcaption>
-          </figure>
-        </div>
-      </div>
+.project-tag {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ember);
+  margin-bottom: 0.5rem;
+}
 
-      <!-- Axe Bass -->
-      <div class="project-card-3d">
-        <div class="project-content">
-          <p class="project-tag">CAD · FDM Printing · Prop Design</p>
-          <h3 class="project-title">Axe Bass — Adventure Time Prop</h3>
-          <p class="project-desc">
-            A full-scale replica of the Axe Bass from Adventure Time, modelled from
-            reference and designed to be assembled in interlocking sections.
-          </p>
-          <ul class="project-bullets">
-            <li>Sectioned into interlocking parts to fit on a standard print bed — assembled like lego</li>
-            <li>Used relative measurements from reference images to ensure accurate proportions at full scale</li>
-            <li>Finished with paint to match the original prop design</li>
-          </ul>
-          <div class="project-chips">
-            <span class="chip">Fusion 360</span>
-            <span class="chip">FDM Printing</span>
-            <span class="chip">Prop Design</span>
-            <span class="chip">Painting</span>
-          </div>
-          <a class="project-link" href="https://github.com/iforswitch/3d-projects" target="_blank">View on GitHub →</a>
-        </div>
-        <div class="img-grid">
-          <figure class="img-figure">
-            <img src="https://raw.githubusercontent.com/iforswitch/3d-projects/main/ax-bass-prop-guitar/IMG_9041.jpg" alt="Axe Bass full view">
-            <figcaption class="img-caption">Full prop assembled</figcaption>
-          </figure>
-          <figure class="img-figure">
-            <img src="https://raw.githubusercontent.com/iforswitch/3d-projects/main/ax-bass-prop-guitar/IMG_9036.jpg" alt="Axe Bass painted">
-            <figcaption class="img-caption">Painted finish</figcaption>
-          </figure>
-          <figure class="img-figure">
-            <img src="https://raw.githubusercontent.com/iforswitch/3d-projects/main/ax-bass-prop-guitar/IMG_9020.jpg" alt="Axe Bass detail">
-            <figcaption class="img-caption">Section joints</figcaption>
-          </figure>
-        </div>
-      </div>
+.project-title {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--bark);
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
 
-    </div>
+.project-desc {
+  font-size: 0.92rem;
+  color: var(--bark-light);
+  line-height: 1.85;
+  margin-bottom: 1.25rem;
+}
 
-    <!-- CTA -->
-    <section class="cta-strip">
-      <p>Want to know more about any of these?</p>
-      <a class="btn btn-primary" href="mailto:marcjagbayani@gmail.com">Get in touch</a>
-    </section>
+.project-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
 
-  </main>
+.project-bullets li {
+  font-size: 0.85rem;
+  color: var(--bark-light);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.65;
+}
 
-  <footer>
-    <p>Marc Agbayani · Auckland, New Zealand</p>
-  </footer>
+.project-bullets li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--ember);
+  font-size: 0.75rem;
+  top: 0.1em;
+}
 
-  <!-- Lightbox -->
-  <div id="lightbox" onclick="closeLightbox()">
-    <img id="lightbox-img" src="" alt="">
-  </div>
+.project-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
 
-  <script>
-    // Make all img-figure images clickable
-    document.querySelectorAll('.img-figure img').forEach(img => {
-      img.style.cursor = 'zoom-in';
-      img.addEventListener('click', () => {
-        document.getElementById('lightbox-img').src = img.src;
-        document.getElementById('lightbox').classList.add('active');
-      });
-    });
+.chip {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 0.25rem 0.6rem;
+  border-radius: 2px;
+  background: var(--parchment);
+  color: var(--bark-light);
+  border: 1px solid var(--divider);
+}
 
-    function closeLightbox() {
-      document.getElementById('lightbox').classList.remove('active');
-    }
+.project-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ember);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s;
+}
 
-    document.addEventListener('keydown', e => {
-      if (e.key === 'Escape') closeLightbox();
-    });
-  </script>
+.project-link:hover { border-color: var(--ember); }
 
-</body>
-</html>
+/* Responsive */
+@media (max-width: 680px) {
+  .project-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ── 3D project cards — full width with image grid ── */
+.project-card-3d {
+  padding: 2.5rem 0;
+}
+
+.project-card-3d + .project-card-3d {
+  border-top: 1px solid var(--divider);
+}
+
+.project-card-3d .project-content {
+  margin-bottom: 1.75rem;
+}
+
+.img-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.img-figure {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.img-figure img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  object-fit: cover;
+  border-radius: 3px;
+  background: var(--parchment);
+  display: block;
+}
+
+.img-caption {
+  font-size: 0.72rem;
+  color: var(--fog);
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  padding: 0 0.1rem;
+}
+
+@media (max-width: 680px) {
+  .img-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Lightbox ── */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(44, 31, 20, 0.92);
+  z-index: 999;
+  align-items: center;
+  justify-content: center;
+  cursor: zoom-out;
+}
+
+#lightbox.active {
+  display: flex;
+}
+
+#lightbox img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 3px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.4);
+}
