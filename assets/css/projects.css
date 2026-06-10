@@ -217,7 +217,22 @@
   border: none;
 }
 
-.img-caption {
+.img-figure.placeholder {
+  background: var(--parchment);
+  border: 1px dashed var(--divider);
+  border-radius: 3px;
+  height: 160px;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-figure.placeholder::before {
+  content: 'Photo coming soon';
+  font-size: 0.7rem;
+  color: var(--fog);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
   font-size: 0.72rem;
   color: var(--fog);
   letter-spacing: 0.04em;
@@ -227,6 +242,22 @@
 
 @media (max-width: 680px) {
   .img-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Placeholder ── */
+.img-placeholder {
+  width: 100%;
+  height: 160px;
+  background: var(--parchment);
+  border: 1px dashed var(--divider);
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  color: var(--fog);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 /* ── Lightbox ── */
