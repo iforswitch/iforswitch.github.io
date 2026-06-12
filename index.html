@@ -35,6 +35,15 @@
           <a class="btn btn-ghost" href="mailto:marcjagbayani@gmail.com">Email</a>
         </div>
       </div>
+      <div class="hero-photo-card">
+        <div class="hero-photo">
+          <img src="assets/images/pfp.jpg" alt="Marc Agbayani">
+        </div>
+        <p class="hero-photo-caption">
+          When I'm not building things, I'm probably folding origami,
+          building gunpla, or chasing autumn colours.
+        </p>
+      </div>
     </section>
 
     <!-- About -->
@@ -81,6 +90,41 @@
       </div>
     </section>
 
+    <!-- Beyond Engineering -->
+    <section>
+      <p class="section-label">Beyond Engineering</p>
+      <h2 class="section-heading">Making things<br>with my hands</h2>
+      <p class="about-body" style="max-width: 620px; margin-bottom: 2.5rem;">
+        Outside of electronics, I'm drawn to crafts with a lot of small, fiddly parts —
+        origami and gunpla especially. There's a similar satisfaction in folding a
+        complex origami model or assembling a kit to the way I feel about soldering a
+        keyboard matrix: it's all about patience, precision, and getting the small
+        details right. I'm also a fairly avid manga reader when I need to unwind.
+      </p>
+
+      <p class="section-label" style="margin-bottom: 0.75rem;">Speed Build</p>
+      <div class="img-grid" style="margin-bottom: 2.5rem;">
+        <figure class="img-figure" style="grid-column: 1 / -1;">
+          <iframe src="https://www.youtube.com/embed/v7tIrFsStWg" allowfullscreen style="height: 360px;"></iframe>
+          <figcaption class="img-caption">Handwired keyboard — speed build</figcaption>
+        </figure>
+      </div>
+      <div class="img-grid">
+        <figure class="img-figure placeholder-fig">
+          <img src="assets/images/walle.jpg" alt="origami">
+          <figcaption class="img-caption">Origami — WALL-E by Brian Chan</figcaption>
+        </figure>
+        <figure class="img-figure placeholder-fig">
+          <img src="assets/images/gunpla.jpg" alt="gunpla">
+          <figcaption class="img-caption">Gunpla &amp; scale modelling</figcaption>
+        </figure>
+        <figure class="img-figure placeholder-fig">
+          <img src="assets/images/manga.jpg" alt="manga">
+          <figcaption class="img-caption">Manga collection</figcaption>
+        </figure>
+      </div>
+    </section>
+
     <!-- CTA -->
     <section class="cta-strip">
       <p>Interested in working together?</p>
@@ -92,6 +136,29 @@
   <footer>
     <p>Marc Agbayani · Auckland, New Zealand</p>
   </footer>
+
+  <!-- Lightbox -->
+  <div id="lightbox" onclick="closeLightbox()">
+    <img id="lightbox-img" src="" alt="">
+  </div>
+
+  <script>
+    document.querySelectorAll('.img-figure img').forEach(img => {
+      img.style.cursor = 'zoom-in';
+      img.addEventListener('click', () => {
+        document.getElementById('lightbox-img').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+      });
+    });
+
+    function closeLightbox() {
+      document.getElementById('lightbox').classList.remove('active');
+    }
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeLightbox();
+    });
+  </script>
 
 </body>
 </html>
