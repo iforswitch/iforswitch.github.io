@@ -40,15 +40,15 @@
           <img src="assets/images/pfp.jpg" alt="Marc Agbayani">
         </div>
         <p class="hero-photo-caption">
-          When I'm not building things, I'm probably folding origami,
-          building gunpla, or chasing autumn colours.
+          When I'm not engineering things, I'm probably folding origami,
+          building gunpla, or becoming autumn itself.
         </p>
       </div>
     </section>
 
     <!-- About -->
     <section>
-      <div class="about-grid">
+      <div class="about-grid-3">
         <div>
           <p class="section-label">About</p>
           <h2 class="section-heading">Hardware meets<br>software</h2>
@@ -62,6 +62,10 @@
             things that are as considered in design as they are in function.
           </p>
         </div>
+        <figure class="img-figure" style="margin: 0;">
+          <img src="assets/images/pfp2.jpg" alt="Marc Agbayani">
+          <figcaption class="img-caption">In the workshop — making the brushless motor</figcaption>
+        </figure>
         <div>
           <p class="section-label">Skills</p>
           <ul class="skills-list">
@@ -94,13 +98,20 @@
     <section>
       <p class="section-label">Beyond Engineering</p>
       <h2 class="section-heading">Making things<br>with my hands</h2>
-      <p class="about-body" style="max-width: 620px; margin-bottom: 2.5rem;">
-        Outside of electronics, I'm drawn to crafts with a lot of small, fiddly parts —
-        origami and gunpla especially. There's a similar satisfaction in folding a
-        complex origami model or assembling a kit to the way I feel about soldering a
-        keyboard matrix: it's all about patience, precision, and getting the small
-        details right. I'm also a fairly avid manga reader when I need to unwind.
-      </p>
+      <div class="about-grid" style="margin-top: 1.5rem; margin-bottom: 2.5rem; align-items: center;">
+        <figure class="img-figure" style="margin: 0;">
+          <img src="assets/images/pfp3.jpg" alt="Marc Agbayani" style="height: 320px;">
+          <figcaption class="img-caption">Out and about — chasing autumn</figcaption>
+        </figure>
+        <p class="about-body">
+          Outside of electronics, I'm drawn to crafts with a lot of small, fiddly parts —
+          origami and gunpla especially. There's a similar satisfaction in folding a
+          complex origami model or assembling a kit to the way I feel about soldering a
+          keyboard matrix: it's all about patience, precision, and getting the small
+          details right. I'm also a fairly avid manga reader when I need to unwind,
+          and recently started my physical collection.
+        </p>
+      </div>
 
       <p class="section-label" style="margin-bottom: 0.75rem;">Speed Build</p>
       <div class="img-grid" style="margin-bottom: 2.5rem;">
@@ -120,7 +131,7 @@
         </figure>
         <figure class="img-figure placeholder-fig">
           <img src="assets/images/manga.jpg" alt="manga">
-          <figcaption class="img-caption">Manga collection</figcaption>
+          <figcaption class="img-caption">Manga collection so far</figcaption>
         </figure>
       </div>
     </section>
@@ -143,7 +154,7 @@
   </div>
 
   <script>
-    document.querySelectorAll('.img-figure img').forEach(img => {
+    document.querySelectorAll('.img-figure img, .hero-photo img').forEach(img => {
       img.style.cursor = 'zoom-in';
       img.addEventListener('click', () => {
         document.getElementById('lightbox-img').src = img.src;
